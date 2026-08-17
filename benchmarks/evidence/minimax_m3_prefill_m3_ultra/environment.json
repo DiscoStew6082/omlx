@@ -1,0 +1,43 @@
+{
+  "captured_at": "2026-08-10T15:07:32Z",
+  "hardware": {
+    "chip": "Apple M3 Ultra",
+    "cpu_cores": {
+      "efficiency": 8,
+      "performance": 24,
+      "total": 32
+    },
+    "memory_bytes": 549755813888,
+    "model_identifier": "Mac15,14",
+    "model_name": "Mac Studio"
+  },
+  "operating_system": {
+    "build": "25G76",
+    "name": "macOS",
+    "version": "26.6.1"
+  },
+  "power_source": "AC Power",
+  "preexisting_processes_preserved": {
+    "lm_studio_embedding_worker": {
+      "present": true,
+      "rss_kib": 358432
+    },
+    "lm_studio_llama_server": {
+      "present": true,
+      "rss_kib": 13659024
+    }
+  },
+  "final_process_check": {
+    "captured_at": "2026-08-10T15:51:36Z",
+    "lm_studio_embedding_worker_present": false,
+    "lm_studio_llama_server_present": false,
+    "lm_studio_system_resources_worker_present": true,
+    "explanation": "No benchmark command targeted LM Studio. LM Studio's server log records automatic TTL expiration for qwen3.5-9b-mtp at 2026-08-10 11:17:16 and text-embedding-nomic-embed-text-v1.5 at 2026-08-10 11:17:17."
+  },
+  "software": {
+    "mlx": "0.32.0",
+    "mlx_lm": "0.31.3",
+    "mlx_vlm": "0.6.3",
+    "python": "3.11.15"
+  }
+}

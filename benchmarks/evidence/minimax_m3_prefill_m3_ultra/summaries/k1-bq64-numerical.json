@@ -1,0 +1,50 @@
+{
+  "cases": [
+    {
+      "exact": true,
+      "kv_length": 8192,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "mismatches": 0,
+      "query_length": 4096,
+      "shape": [4096, 64, 128],
+      "steel_mma_bq64_s": 0.02137349999975413,
+      "steel_mma_s": 0.043836249969899654
+    },
+    {
+      "exact": true,
+      "kv_length": 12288,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "mismatches": 0,
+      "query_length": 4096,
+      "shape": [4096, 64, 128],
+      "steel_mma_bq64_s": 0.06609712500358,
+      "steel_mma_s": 0.07210633298382163
+    },
+    {
+      "exact": true,
+      "kv_length": 16384,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "mismatches": 0,
+      "query_length": 4096,
+      "shape": [4096, 64, 128],
+      "steel_mma_bq64_s": 0.022098292014561594,
+      "steel_mma_s": 0.02410091698402539
+    },
+    {
+      "exact": true,
+      "kv_length": 16508,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "mismatches": 0,
+      "query_length": 124,
+      "shape": [124, 64, 128],
+      "steel_mma_bq64_s": 0.004279209009837359,
+      "steel_mma_s": 0.005251125025097281
+    }
+  ],
+  "comparison": "steel_mma versus steel_mma_bq64",
+  "seed_rule": "1729 + query_length + kv_length"
+}

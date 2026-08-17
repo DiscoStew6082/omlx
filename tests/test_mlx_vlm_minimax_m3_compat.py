@@ -27,6 +27,22 @@ def test_minimax_m3_compat_installs_vendor_modules():
     assert hasattr(parser, "parse_tool_call")
 
 
+def test_minimax_msa_auto_uses_the_validated_64_thread_k1_tile():
+    from omlx.patches.mlx_vlm_minimax_m3_compat import (
+        apply_mlx_vlm_minimax_m3_compat_patch,
+    )
+
+    apply_mlx_vlm_minimax_m3_compat_patch()
+
+    from mlx_vlm.models.minimax_m3_vl.msa import (
+        _steel_mma_k1_q_tokens_per_group,
+    )
+
+    assert _steel_mma_k1_q_tokens_per_group("auto") == 4
+    assert _steel_mma_k1_q_tokens_per_group("steel_mma_bq64") == 4
+    assert _steel_mma_k1_q_tokens_per_group("steel_mma") == 8
+
+
 def test_minimax_architecture_fallback_selects_text_model():
     from omlx.patches.mlx_vlm_minimax_m3_compat import (
         apply_mlx_vlm_minimax_m3_compat_patch,

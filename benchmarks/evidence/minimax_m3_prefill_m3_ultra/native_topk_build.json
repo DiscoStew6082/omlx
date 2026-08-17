@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "source": "omlx/custom_kernels/minimax_m3/csrc",
+  "source_status": "existing untouched-upstream native extension; not a candidate source change",
+  "build_directory": "${TMPDIR}/omlx-minimax-native-rgH8EY",
+  "build_context": "outside command sandbox after the sandbox blocked metallib",
+  "toolchain": {
+    "cmake": "/opt/homebrew/bin/cmake 4.3.3",
+    "metal": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/metal",
+    "metallib": "/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.dAwz5o/Metal.xctoolchain/usr/bin/metallib",
+    "python": "${REPO_ROOT}/.venv/bin/python"
+  },
+  "artifacts": {
+    "_ext.cpython-311-darwin.so": "bb5e1e3a6e0feabdf65d04e25b8aea03eb2ad7b675625605f0f5336199138238",
+    "libomlx_minimax_m3_kernel_ops.dylib": "fade2e00cd38ace9d8a7a33173d83d3d882532c82c540793a996eb1a4ad7e062",
+    "omlx_minimax_m3_kernels.metallib": "2cbeefc663eba6a29d4fbb3e7cecd96b2fc2934a150f2d5fd7496328a699c787"
+  },
+  "abi_verification": {
+    "extension_available": true,
+    "native_symbols": [
+      "minimax_msa_topk"
+    ],
+    "abi_probe_result": 3
+  },
+  "numerical_equivalence": {
+    "seed_rule": "1729 + query_length + kv_length",
+    "dtype": "float16",
+    "cases": [
+      {
+        "query_length": 256,
+        "kv_length": 4096,
+        "output_shape": [1, 4, 256, 16],
+        "native_vs_fallback_mismatches": 0,
+        "exact": true
+      },
+      {
+        "query_length": 256,
+        "kv_length": 16508,
+        "output_shape": [1, 4, 256, 16],
+        "native_vs_fallback_mismatches": 0,
+        "exact": true
+      }
+    ]
+  },
+  "candidate_native_vs_fallback": {
+    "runs_per_path": 3,
+    "fallback_prefill_tokens_per_s_median": 346.43981641637544,
+    "native_prefill_tokens_per_s_median": 350.9066488225816,
+    "native_delta_percent": 1.289353,
+    "fallback_prefill_duration_s_median": 47.65041204201407,
+    "native_prefill_duration_s_median": 47.0438507089857,
+    "peak_mlx_bytes_delta": -32,
+    "quality_passes_each": 3
+  },
+  "native_loaded_ab": {
+    "pairs": 3,
+    "upstream_prefill_tokens_per_s_median": 325.9024567461385,
+    "candidate_prefill_tokens_per_s_median": 350.89894463288715,
+    "candidate_delta_percent": 7.669929,
+    "upstream_prefill_duration_s_median": 50.653192875004606,
+    "candidate_prefill_duration_s_median": 47.04488358399249,
+    "upstream_ttft_s_median": 50.77975787498872,
+    "candidate_ttft_s_median": 47.17164575000061,
+    "upstream_end_to_end_s_median": 57.70693241598201,
+    "candidate_end_to_end_s_median": 54.094445458002156,
+    "upstream_peak_mlx_bytes": 245282074440,
+    "candidate_peak_mlx_bytes": 246577643376,
+    "quality_passes_each": 3
+  },
+  "binary_policy": "No compiled artifact is committed; temporary source-package copies are removed after validation."
+}

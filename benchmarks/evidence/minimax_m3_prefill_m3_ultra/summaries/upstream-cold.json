@@ -1,0 +1,98 @@
+{
+  "groups": [
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        9
+      ],
+      "label": "upstream-cold",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.22700762967041396,
+          "max": 18.87443930366937,
+          "mean": 18.833366520412522,
+          "median": 18.836549407121684,
+          "min": 18.789110850446505,
+          "n": 3,
+          "stddev": 0.04275317892512979,
+          "variance": 0.0018278343082041618
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.10393777909027196,
+          "max": 60.74527983399457,
+          "mean": 60.700338625339405,
+          "median": 60.727523208013736,
+          "min": 60.6282128340099,
+          "n": 3,
+          "stddev": 0.0630905838674523,
+          "variance": 0.003980421772736033
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 245725354748.0,
+          "mean": 245725354748.0,
+          "median": 245725354748.0,
+          "min": 245725354748.0,
+          "n": 3,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 1.789706541961229,
+          "max": 52.768122916982975,
+          "mean": 51.699756624662164,
+          "median": 51.17434491601307,
+          "min": 51.15680204099044,
+          "n": 3,
+          "stddev": 0.9252739264896127,
+          "variance": 0.8561318390415051
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 1.771410413838359,
+          "max": 322.69413531308356,
+          "mean": 319.3726787421672,
+          "median": 322.58351381132087,
+          "min": 312.84038710209717,
+          "n": 3,
+          "stddev": 5.657400890193277,
+          "variance": 32.006184832359686
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.02987138912149651,
+          "max": 247319226816.0,
+          "mean": 247252554786.66666,
+          "median": 247265274184.0,
+          "min": 247173163360.0,
+          "n": 3,
+          "stddev": 73857772.75316654,
+          "variance": 5454970596058389.0
+        },
+        "ttft_s": {
+          "cv_percent": 0.10505123923928872,
+          "max": 52.95960979201482,
+          "mean": 52.91837823634463,
+          "median": 52.94036966699059,
+          "min": 52.855155250028474,
+          "n": 3,
+          "stddev": 0.055591412122614085,
+          "variance": 0.0030904051017863247
+        }
+      },
+      "quality_passes": 3,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/upstream-cold-01.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/upstream-cold-02.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/upstream-cold-03.jsonl:1"
+      ],
+      "workload_kind": "long"
+    }
+  ],
+  "record_count": 3,
+  "schema_version": 1
+}

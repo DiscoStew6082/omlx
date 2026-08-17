@@ -1,0 +1,153 @@
+{
+  "adapter_detection_long": {
+    "candidate": {
+      "end_to_end_s_median": 53.929080458998214,
+      "peak_mlx_bytes_median": 196604462784,
+      "prefill_s_median": 48.13338583300356,
+      "prefill_tokens_per_s_median": 342.96361484466735,
+      "prefill_tokens_per_s_variance": 0.008847167500284425,
+      "quality_passes": 0,
+      "runs": 3,
+      "ttft_s_median": 48.25994333298877
+    },
+    "candidate_output_hash": "af0fa072b2775d66c0b3e63138c5cfa62c94ddb466f480e2ada61b925e69606d",
+    "paired_prefill_rate_delta_percent": [
+      7.208714168100205,
+      7.286837793117695,
+      7.292106832336942
+    ],
+    "paired_prefill_rate_delta_percent_median": 7.286837793117695,
+    "paired_prefill_rate_delta_percent_variance": 0.002180900001444739,
+    "quality_note": "Both sides passed the same seven of eight facts and missed only attention_executor in all runs.",
+    "upstream": {
+      "end_to_end_s_median": 57.50407812499907,
+      "peak_mlx_bytes_median": 195748418668,
+      "prefill_s_median": 51.640787582990015,
+      "prefill_tokens_per_s_median": 319.66979538161763,
+      "prefill_tokens_per_s_variance": 0.04322629820447685,
+      "quality_passes": 0,
+      "runs": 3,
+      "ttft_s_median": 51.79179587500403
+    },
+    "upstream_output_hash": "a8a6f7545c62739af731fbbb29b20acae2093bedbbdb9a14445170a641cb1bb9"
+  },
+  "adapter_detection_short": {
+    "candidate": {
+      "end_to_end_s_median": 10.934098083002027,
+      "peak_mlx_bytes_median": 194325533508,
+      "prefill_s_median": 5.3854829580232035,
+      "prefill_tokens_per_s_median": 379.91021714253185,
+      "prefill_tokens_per_s_variance": 0.003061342755182487,
+      "quality_passes": 3,
+      "runs": 3,
+      "ttft_s_median": 5.458949207997648
+    },
+    "output_hash_both": "af5f4c4c694498d4d8f12c6eaa25c771a54cbdfb24b6edb3473b6cc1e384a086",
+    "paired_prefill_rate_delta_percent": [
+      0.10568457868116443,
+      0.032854490272149484,
+      0.01897250428561925
+    ],
+    "paired_prefill_rate_delta_percent_median": 0.032854490272149484,
+    "paired_prefill_rate_delta_percent_variance": 0.0021693191930956196,
+    "upstream": {
+      "end_to_end_s_median": 10.974891165998997,
+      "peak_mlx_bytes_median": 194325533508,
+      "prefill_s_median": 5.387543415999971,
+      "prefill_tokens_per_s_median": 379.76492104430605,
+      "prefill_tokens_per_s_variance": 0.027594777622203703,
+      "quality_passes": 3,
+      "runs": 3,
+      "ttft_s_median": 5.461522583005717
+    }
+  },
+  "checkpoint": {
+    "config_sha256": "a5b2fea3d4d3a2c97aca84611989ebedb34d4c38b690b3989165750432649ff7",
+    "index_sha256": "b41da6e5da11e78e17425e9558a1639094df5ceadc8853f059585c4598839bef",
+    "path": "${OMLX_MINIMAX_OQ3_MODEL}"
+  },
+  "k1_tile_long": {
+    "bq64": {
+      "end_to_end_s_median": 52.88324850000208,
+      "peak_mlx_bytes_median": 196604462668,
+      "prefill_s_median": 47.11351208301494,
+      "prefill_tokens_per_s_median": 350.38780320415464,
+      "prefill_tokens_per_s_variance": 0.0016303497792142258,
+      "quality_passes": 0,
+      "runs": 3,
+      "ttft_s_median": 47.23742583300918
+    },
+    "output_hash_both": "af0fa072b2775d66c0b3e63138c5cfa62c94ddb466f480e2ada61b925e69606d",
+    "paired_prefill_rate_delta_percent": [
+      0.9293874806725277,
+      0.8981327597056499,
+      0.9562557616026091
+    ],
+    "paired_prefill_rate_delta_percent_median": 0.9293874806725277,
+    "paired_prefill_rate_delta_percent_variance": 0.0008461742420615145,
+    "quality_note": "Both sides were byte-identical and missed only the same pre-existing attention_executor fact.",
+    "reference": {
+      "end_to_end_s_median": 53.322811165999155,
+      "peak_mlx_bytes_median": 196604462668,
+      "prefill_s_median": 47.551379166019615,
+      "prefill_tokens_per_s_median": 347.16132927216285,
+      "prefill_tokens_per_s_variance": 0.004261068397763636,
+      "quality_passes": 0,
+      "runs": 3,
+      "ttft_s_median": 47.67567054199753
+    }
+  },
+  "k1_tile_short": {
+    "bq64": {
+      "end_to_end_s_median": 10.927189915964846,
+      "peak_mlx_bytes_median": 194325533508,
+      "prefill_s_median": 5.387712916010059,
+      "prefill_tokens_per_s_median": 379.7529734593193,
+      "prefill_tokens_per_s_variance": 0.004826444874632151,
+      "quality_passes": 3,
+      "runs": 3,
+      "ttft_s_median": 5.461884249991272
+    },
+    "output_hash_both": "af5f4c4c694498d4d8f12c6eaa25c771a54cbdfb24b6edb3473b6cc1e384a086",
+    "paired_prefill_rate_delta_percent": [
+      -0.021781429379819084,
+      -0.01212635195724232,
+      -0.015631891841694223
+    ],
+    "paired_prefill_rate_delta_percent_median": -0.015631891841694223,
+    "paired_prefill_rate_delta_percent_variance": 0.000023887690308373564,
+    "reference": {
+      "end_to_end_s_median": 10.926333041978069,
+      "peak_mlx_bytes_median": 194325533508,
+      "prefill_s_median": 5.387059582979418,
+      "prefill_tokens_per_s_median": 379.7990292263335,
+      "prefill_tokens_per_s_variance": 0.006650851702391508,
+      "quality_passes": 3,
+      "runs": 3,
+      "ttft_s_median": 5.461048875004053
+    }
+  },
+  "settings": {
+    "cache_layer_count": 60,
+    "cached_prompt_tokens": 0,
+    "max_tokens": 256,
+    "prefix_cache": false,
+    "seed": 1729,
+    "speculative_decoding": false,
+    "temperature": 1.0,
+    "top_k": 0,
+    "top_p": 0.95
+  },
+  "workloads": {
+    "long": {
+      "prompt_sha256": "e31aa541996901bff2e597a0b152839ee7415042607886284393f2ee26f903d5",
+      "prompt_tokens": 16509,
+      "token_ids_sha256": "653beb6397c7d06ca3d14827b60ad18fbf12dbdae6111a2a16b1dde01d9605ab"
+    },
+    "short": {
+      "prompt_sha256": "278c335f6280c7ecc2eafcba3109108a9afaa6d6734f10437766a1bb8a762a91",
+      "prompt_tokens": 2047,
+      "token_ids_sha256": "ccc329e5f6e2fb86e893815a1a53a954c21fdde16dd9bce6d480f28eb4a382bf"
+    }
+  }
+}

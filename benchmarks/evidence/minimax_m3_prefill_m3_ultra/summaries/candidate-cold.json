@@ -1,0 +1,98 @@
+{
+  "groups": [
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        5
+      ],
+      "label": "candidate-cold",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.11612531277261992,
+          "max": 18.719686790545563,
+          "mean": 18.695630603941837,
+          "median": 18.68971108042157,
+          "min": 18.67749394085838,
+          "n": 3,
+          "stddev": 0.021710359513641107,
+          "variance": 0.00047133971021154694
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.003623488681871888,
+          "max": 56.55674033300602,
+          "mean": 56.555198930339735,
+          "median": 56.5559830830025,
+          "min": 56.55287337501068,
+          "n": 3,
+          "stddev": 0.0020492712322509915,
+          "variance": 4.199512583331498e-06
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 246577204536.0,
+          "mean": 246577204536.0,
+          "median": 246577204536.0,
+          "min": 246577204536.0,
+          "n": 3,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 1.898755796258247,
+          "max": 49.236767082998995,
+          "mean": 48.70139119433588,
+          "median": 49.233789167017676,
+          "min": 47.63361733299098,
+          "n": 3,
+          "stddev": 0.9247204881608562,
+          "variance": 0.8551079812244522
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 1.9198013263605735,
+          "max": 346.56196451757995,
+          "mean": 339.0460163788567,
+          "median": 335.29818198634433,
+          "min": 335.27790263264586,
+          "n": 3,
+          "stddev": 6.5090099194139786,
+          "variance": 42.36721013102957
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.025585182957279014,
+          "max": 247314999744.0,
+          "mean": 247248813765.33334,
+          "median": 247242484016.0,
+          "min": 247188957536.0,
+          "n": 3,
+          "stddev": 63259061.361562595,
+          "variance": 4001708844345941.5
+        },
+        "ttft_s": {
+          "cv_percent": 0.013816435861485519,
+          "max": 49.417686458007665,
+          "mean": 49.41015944399987,
+          "median": 49.40842379099922,
+          "min": 49.40436808299273,
+          "n": 3,
+          "stddev": 0.006826722988637972,
+          "variance": 4.6604146763598165e-05
+        }
+      },
+      "quality_passes": 3,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/candidate-cold-01.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/candidate-cold-02.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/candidate-cold-03.jsonl:1"
+      ],
+      "workload_kind": "long"
+    }
+  ],
+  "record_count": 3,
+  "schema_version": 1
+}

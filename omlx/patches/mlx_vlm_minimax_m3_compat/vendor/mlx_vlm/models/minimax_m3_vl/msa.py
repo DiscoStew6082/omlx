@@ -1276,6 +1276,10 @@ def build_k2q_csr_b1(
     return row_ptr, q_indices, qsplit, split_counts
 
 
+def _steel_mma_k1_q_tokens_per_group(k1_impl: str) -> int:
+    return 4 if k1_impl in {"auto", "steel_mma_bq64"} else 8
+
+
 def msa_sparse_attention_b1_from_csr(
     q: mx.array,
     k: mx.array,
@@ -1367,7 +1371,7 @@ def msa_sparse_attention_b1_from_csr(
     threadgroup_size = qhead_per_kv * 32 if use_simd_k1 else 256
 
     if use_steel_mma_k1:
-        q_tokens_per_group = 4 if k1_impl == "steel_mma_bq64" else 8
+        q_tokens_per_group = _steel_mma_k1_q_tokens_per_group(k1_impl)
         groups_per_row_cap = (total_q + q_tokens_per_group - 1) // q_tokens_per_group
         work_items = h_kv * total_rows * groups_per_row_cap
         threadgroup_size = (q_tokens_per_group * qhead_per_kv // 8) * 32

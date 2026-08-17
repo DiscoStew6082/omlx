@@ -1,0 +1,76 @@
+{
+  "repository": "Jundot/MiniMax-M3-oQ3",
+  "revision": "27ff107bc3711e4610cd74b2a7f8bb38eebeb225",
+  "local_directory": "${OMLX_MINIMAX_OQ3_MODEL}",
+  "benchmark_input": true,
+  "hugging_face_cli": {
+    "path": "/opt/homebrew/bin/hf",
+    "version": "1.10.2",
+    "updated_for_this_task": false
+  },
+  "verification": {
+    "command": "/opt/homebrew/bin/hf cache verify Jundot/MiniMax-M3-oQ3 --local-dir ${OMLX_MINIMAX_OQ3_MODEL} --fail-on-missing-files",
+    "verified_repository_files": 48,
+    "all_checksums_match": true,
+    "missing_files": 0,
+    "root_file_count": 48,
+    "root_file_bytes": 191517758468,
+    "allocated_size": "178 GiB",
+    "referenced_weight_shards": 31,
+    "missing_weight_shards": 0,
+    "index_total_size_bytes": 191500496134,
+    "config_sha256": "a5b2fea3d4d3a2c97aca84611989ebedb34d4c38b690b3989165750432649ff7",
+    "index_sha256": "b41da6e5da11e78e17425e9558a1639094df5ceadc8853f059585c4598839bef"
+  },
+  "model_identity": {
+    "model_type": "minimax_m3_vl",
+    "architecture": "MiniMaxM3SparseForConditionalGeneration"
+  },
+  "quantization": {
+    "mode": "affine",
+    "default_bits": 3,
+    "default_group_size": 64,
+    "module_override_count": 365,
+    "module_overrides_by_bits": {
+      "4": 162,
+      "5": 110,
+      "6": 11,
+      "8": 82
+    }
+  },
+  "follow_up_benchmark": {
+    "role": "accuracy and portability control; not substituted for the official 4-bit target",
+    "workload_token_identity": {
+      "long_tokens": 16509,
+      "long_token_ids_sha256": "653beb6397c7d06ca3d14827b60ad18fbf12dbdae6111a2a16b1dde01d9605ab",
+      "short_tokens": 2047,
+      "short_token_ids_sha256": "ccc329e5f6e2fb86e893815a1a53a954c21fdde16dd9bce6d480f28eb4a382bf"
+    },
+    "long_loaded_ab": {
+      "pairs": 3,
+      "upstream_prefill_tokens_per_s_median": 319.66979538161763,
+      "candidate_prefill_tokens_per_s_median": 342.96361484466735,
+      "delta_percent": 7.286838,
+      "upstream_output_sha256": "a8a6f7545c62739af731fbbb29b20acae2093bedbbdb9a14445170a641cb1bb9",
+      "candidate_output_sha256": "af0fa072b2775d66c0b3e63138c5cfa62c94ddb466f480e2ada61b925e69606d",
+      "strict_facts_passed_upstream": "7/8 on all 3 runs",
+      "strict_facts_passed_candidate": "7/8 on all 3 runs",
+      "shared_failed_fact": "attention_executor: returned _msa_prefill_attention instead of frozen 4-bit expectation msa_sparse_attention_b1"
+    },
+    "short_loaded_ab": {
+      "pairs": 3,
+      "quality_passes_upstream": 3,
+      "quality_passes_candidate": 3,
+      "upstream_prefill_tokens_per_s_median": 379.76492104430605,
+      "candidate_prefill_tokens_per_s_median": 379.91021714253185,
+      "delta_percent": 0.038258
+    },
+    "correctness_conclusion": "No candidate-specific Q3 regression observed; the Q3 upstream baseline itself misses one strict long-prompt fact."
+  },
+  "notes": [
+    "The download was separately authorized while the 4-bit benchmark continued.",
+    "The model was later loaded for explicitly requested Q3 accuracy and short-prompt A/B controls.",
+    "Earlier Q3 smoke/safety files without explicit current-worktree import provenance are retained but excluded from the conclusion.",
+    "HF CLI --fail-on-extra-files was rejected because the CLI reports its own local .cache/huggingface metadata as extra; the missing-file and checksum verification passed."
+  ]
+}

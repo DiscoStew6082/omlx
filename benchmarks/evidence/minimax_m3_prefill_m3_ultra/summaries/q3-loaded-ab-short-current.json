@@ -1,0 +1,190 @@
+{
+  "groups": [
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        1
+      ],
+      "label": "candidate-q3-short",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.5808831804838483,
+          "max": 21.396354563482713,
+          "mean": 21.30134422495937,
+          "median": 21.34625310235042,
+          "min": 21.161425009044972,
+          "n": 3,
+          "stddev": 0.12373592581975654,
+          "variance": 0.015310579338472293
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.3054227052263827,
+          "max": 10.9838192499883,
+          "mean": 10.946053471998312,
+          "median": 10.934098083002027,
+          "min": 10.920243083004607,
+          "n": 3,
+          "stddev": 0.03343173262970363,
+          "variance": 0.00111768074662399
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 194325533508.0,
+          "mean": 194325533508.0,
+          "median": 194325533508.0,
+          "min": 194325533508.0,
+          "n": 3,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.01456498690775224,
+          "max": 5.386521457985509,
+          "mean": 5.38566274967161,
+          "median": 5.3854829580232035,
+          "min": 5.3849838330061175,
+          "n": 3,
+          "stddev": 0.0007844210743853593,
+          "variance": 6.153164219398813e-07
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.014564296018323307,
+          "max": 379.9454303761279,
+          "mean": 379.8975398262954,
+          "median": 379.91021714253185,
+          "min": 379.83697196022644,
+          "n": 3,
+          "stddev": 0.055329402266629336,
+          "variance": 0.003061342755182487
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.011632599316629405,
+          "max": 196055637640.0,
+          "mean": 196039663184.0,
+          "median": 196049804888.0,
+          "min": 196013547024.0,
+          "n": 3,
+          "stddev": 22804508.519864574,
+          "variance": 520045608832576.0
+        },
+        "ttft_s": {
+          "cv_percent": 0.009402992310276003,
+          "max": 5.459771041001659,
+          "mean": 5.45918249967508,
+          "median": 5.458949207997648,
+          "min": 5.458827250025934,
+          "n": 3,
+          "stddev": 0.0005133265106483811,
+          "variance": 2.635041065344426e-07
+        }
+      },
+      "quality_passes": 3,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-short-current-worktree.jsonl:2",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-short-current-worktree.jsonl:4",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-short-current-worktree.jsonl:6"
+      ],
+      "workload_kind": "short"
+    },
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        1
+      ],
+      "label": "upstream-q3-short",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.6797931830900013,
+          "max": 21.33179478153471,
+          "mean": 21.19023757539865,
+          "median": 21.195099637263795,
+          "min": 21.04381830739744,
+          "n": 3,
+          "stddev": 0.144049790518136,
+          "variance": 0.020750342148318862
+        },
+        "end_to_end_s": {
+          "cv_percent": 6.881919267817514,
+          "max": 12.31667258401285,
+          "mean": 11.4101919583433,
+          "median": 10.974891165998997,
+          "min": 10.939012125018053,
+          "n": 3,
+          "stddev": 0.785240198876192,
+          "variance": 0.6166021699311216
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0001217048613132117,
+          "max": 194325533508.0,
+          "mean": 194325396962.66666,
+          "median": 194325533508.0,
+          "min": 194325123872.0,
+          "n": 3,
+          "stddev": 236503.45486976154,
+          "variance": 55933884165.333336
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.04375935078861013,
+          "max": 5.391174582997337,
+          "mean": 5.388490346997666,
+          "median": 5.387543415999971,
+          "min": 5.386753041995689,
+          "n": 3,
+          "stddev": 0.002357968393153104,
+          "variance": 5.560014943109032e-06
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.04374967928282392,
+          "max": 379.8206422401715,
+          "mean": 379.6982325990477,
+          "median": 379.76492104430605,
+          "min": 379.5091345126656,
+          "n": 3,
+          "stddev": 0.16611675900463416,
+          "variance": 0.027594777622203703
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.013447290481905969,
+          "max": 196047724168.0,
+          "mean": 196029444981.33334,
+          "median": 196041383512.0,
+          "min": 195999227264.0,
+          "n": 3,
+          "stddev": 26360648.896707937,
+          "variance": 694883810255509.4
+        },
+        "ttft_s": {
+          "cv_percent": 12.76891251282637,
+          "max": 6.764964792004321,
+          "mean": 5.89568869433909,
+          "median": 5.461522583005717,
+          "min": 5.460578708007233,
+          "n": 3,
+          "stddev": 0.7528153314087537,
+          "variance": 0.5667309232040716
+        }
+      },
+      "quality_passes": 3,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-short-current-worktree.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-short-current-worktree.jsonl:3",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-short-current-worktree.jsonl:5"
+      ],
+      "workload_kind": "short"
+    }
+  ],
+  "record_count": 6,
+  "schema_version": 1
+}

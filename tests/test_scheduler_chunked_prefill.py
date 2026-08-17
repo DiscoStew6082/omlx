@@ -366,6 +366,44 @@ class TestMiniMaxM3AdaptiveChunkedPrefill:
         assert model.chunk_lengths == [4096]
         assert state.tokens_processed == 4096
 
+    def test_dict_subclass_adapter_attributes_enable_adaptive_prefill(
+        self, monkeypatch
+    ):
+        """mlx.nn.Module is a dict subclass but exposes config as attributes."""
+        monkeypatch.delenv("MLX_MINIMAX_M3_ADAPTIVE_PREFILL_STEP", raising=False)
+
+        class DictBackedRecordingModel(dict):
+            def __init__(self):
+                super().__init__()
+                self.model_type = "minimax_m3_vl"
+                self.layers = []
+                self.chunk_lengths: list[int] = []
+
+            def __call__(self, tokens, cache=None):
+                self.chunk_lengths.append(int(tokens.shape[1]))
+
+        model = DictBackedRecordingModel()
+        tokenizer = MagicMock()
+        tokenizer.eos_token_id = 2
+        sched = Scheduler(
+            model=model,
+            tokenizer=tokenizer,
+            config=SchedulerConfig(
+                prefill_step_size=2048,
+                chunked_prefill=True,
+                paged_cache_block_size=0,
+            ),
+        )
+        req = _make_request("minimax-dict-adapter", n_tokens=4098)
+        state = _make_prefill_state(sched, req, n_remaining=4097)
+
+        with patch("omlx.scheduler._sync_and_clear_cache"):
+            done = sched._step_prefill_chunk(state)
+
+        assert not done
+        assert model.chunk_lengths == [4096]
+        assert state.tokens_processed == 4096
+
     def test_minimax_m3_nested_vlm_model_enables_adaptive_prefill(self, monkeypatch):
         monkeypatch.delenv("MLX_MINIMAX_M3_ADAPTIVE_PREFILL_STEP", raising=False)
 

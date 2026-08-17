@@ -1,0 +1,190 @@
+{
+  "groups": [
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        5
+      ],
+      "label": "candidate-q3-current",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.2685038995883073,
+          "max": 19.551418350901628,
+          "mean": 19.504105630007327,
+          "median": 19.513063250587123,
+          "min": 19.44783528853323,
+          "n": 3,
+          "stddev": 0.052369284196392266,
+          "variance": 0.0027425419272425005
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.049244593523140645,
+          "max": 53.97087254101643,
+          "mean": 53.940508361003594,
+          "median": 53.929080458998214,
+          "min": 53.921572082996136,
+          "n": 3,
+          "stddev": 0.026562784086691913,
+          "variance": 0.0007055814984362131
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 196604462784.0,
+          "mean": 196604462784.0,
+          "median": 196604462784.0,
+          "min": 196604462784.0,
+          "n": 3,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.02743265154526485,
+          "max": 48.15414970900747,
+          "mean": 48.139055764001874,
+          "median": 48.13338583300356,
+          "min": 48.12963174999459,
+          "n": 3,
+          "stddev": 0.013205819424919368,
+          "variance": 0.0001743936666835777
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.027428699106734147,
+          "max": 342.9903658051956,
+          "mean": 342.9232369869639,
+          "median": 342.96361484466735,
+          "min": 342.8157303110286,
+          "n": 3,
+          "stddev": 0.09405938284022719,
+          "variance": 0.008847167500284425
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.014989184986129904,
+          "max": 197265104640.0,
+          "mean": 197231102306.66666,
+          "median": 197216722544.0,
+          "min": 197211479736.0,
+          "n": 3,
+          "stddev": 29563334.77492939,
+          "variance": 873990763014549.4
+        },
+        "ttft_s": {
+          "cv_percent": 0.026666446611634455,
+          "max": 48.27976733300602,
+          "mean": 48.265115277667064,
+          "median": 48.25994333298877,
+          "min": 48.2556351670064,
+          "n": 3,
+          "stddev": 0.012870591197562913,
+          "variance": 0.00016565211777478395
+        }
+      },
+      "quality_passes": 0,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-current-worktree.jsonl:2",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-current-worktree.jsonl:4",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-current-worktree.jsonl:6"
+      ],
+      "workload_kind": "long"
+    },
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        9
+      ],
+      "label": "upstream-q3-current",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.7808161738321854,
+          "max": 19.56375781560744,
+          "mean": 19.472974052829503,
+          "median": 19.55772580528949,
+          "min": 19.297438537591585,
+          "n": 3,
+          "stddev": 0.15204813093063757,
+          "variance": 0.023118634119500305
+        },
+        "end_to_end_s": {
+          "cv_percent": 1.3410219080044188,
+          "max": 58.83408616599627,
+          "mean": 57.9371194166597,
+          "median": 57.50407812499907,
+          "min": 57.47319395898376,
+          "n": 3,
+          "stddev": 0.7769494642440884,
+          "variance": 0.6036504699891759
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.00012945029893706898,
+          "max": 195748418668.0,
+          "mean": 195748272369.33334,
+          "median": 195748418668.0,
+          "min": 195747979772.0,
+          "n": 3,
+          "stddev": 253396.72374625,
+          "variance": 64209899605.333336
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.06502140341444304,
+          "max": 51.665601749991765,
+          "mean": 51.635182888664225,
+          "median": 51.640787582990015,
+          "min": 51.5991593330109,
+          "n": 3,
+          "stddev": 0.033573920569823834,
+          "variance": 0.0011272081424288398
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.06503170785855764,
+          "max": 319.92769288081985,
+          "mean": 319.704583774768,
+          "median": 319.66979538161763,
+          "min": 319.51626306186654,
+          "n": 3,
+          "stddev": 0.20790935093082477,
+          "variance": 0.04322629820447685
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.023926415294778756,
+          "max": 197267447552.0,
+          "mean": 197235012549.33334,
+          "median": 197256715936.0,
+          "min": 197180874160.0,
+          "n": 3,
+          "stddev": 47191268.2092625,
+          "variance": 2227015795198549.2
+        },
+        "ttft_s": {
+          "cv_percent": 1.4047275424456438,
+          "max": 53.04928941599792,
+          "mean": 52.20266347199989,
+          "median": 51.79179587500403,
+          "min": 51.76690512499772,
+          "n": 3,
+          "stddev": 0.7333051916813939,
+          "variance": 0.5377365041468858
+        }
+      },
+      "quality_passes": 0,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-current-worktree.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-current-worktree.jsonl:3",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/q3/q3-loaded-ab-current-worktree.jsonl:5"
+      ],
+      "workload_kind": "long"
+    }
+  ],
+  "record_count": 6,
+  "schema_version": 1
+}

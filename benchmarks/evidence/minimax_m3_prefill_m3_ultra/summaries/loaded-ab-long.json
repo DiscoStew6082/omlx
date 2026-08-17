@@ -1,0 +1,194 @@
+{
+  "groups": [
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        5
+      ],
+      "label": "candidate-loaded",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.2768110944863259,
+          "max": 19.373341897098115,
+          "mean": 19.32346501396315,
+          "median": 19.353556614946324,
+          "min": 19.254203727906116,
+          "n": 5,
+          "stddev": 0.05348949499783367,
+          "variance": 0.002861126075123273
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.04823266389756034,
+          "max": 54.73997170801158,
+          "mean": 54.70353098320193,
+          "median": 54.69250595799531,
+          "min": 54.67951537499903,
+          "n": 5,
+          "stddev": 0.026384970239225574,
+          "variance": 0.0006961666545248192
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 246577643456.0,
+          "mean": 246577643456.0,
+          "median": 246577643456.0,
+          "min": 246577643456.0,
+          "n": 5,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.010464912115099638,
+          "max": 47.66659229097422,
+          "mean": 47.65942039159127,
+          "median": 47.659660917008296,
+          "min": 47.65277675000834,
+          "n": 5,
+          "stddev": 0.004987516458545902,
+          "variance": 2.487532042426625e-05
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.010464754650569966,
+          "max": 346.4226247843387,
+          "mean": 346.3743370983058,
+          "median": 346.37258600614155,
+          "min": 346.32221869835297,
+          "n": 5,
+          "stddev": 0.03624722454987584,
+          "variance": 0.001313861287569122
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.011882306892928605,
+          "max": 247354206872.0,
+          "mean": 247324653374.4,
+          "median": 247322700392.0,
+          "min": 247279839824.0,
+          "n": 5,
+          "stddev": 29387874.335818112,
+          "variance": 863647157977836.8
+        },
+        "ttft_s": {
+          "cv_percent": 0.011347797382612629,
+          "max": 47.791691374994116,
+          "mean": 47.78371690820204,
+          "median": 47.78403375000926,
+          "min": 47.776611458015395,
+          "n": 5,
+          "stddev": 0.005422399376623978,
+          "variance": 2.9402414999612102e-05
+        }
+      },
+      "quality_passes": 5,
+      "runs": 5,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:2",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:4",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:6",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:8",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:10"
+      ],
+      "workload_kind": "long"
+    },
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        9
+      ],
+      "label": "upstream-loaded",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.19208937585471011,
+          "max": 19.407931728552928,
+          "mean": 19.36666745517632,
+          "median": 19.36157785299737,
+          "min": 19.31927527366256,
+          "n": 5,
+          "stddev": 0.037201310638505465,
+          "variance": 0.0013839375132225797
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.02972267196433743,
+          "max": 58.92796316597378,
+          "mean": 58.904302699991966,
+          "median": 58.909458375012036,
+          "min": 58.884414458996616,
+          "n": 5,
+          "stddev": 0.017507932664398967,
+          "variance": 0.0003065277061811283
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 245725793644.0,
+          "mean": 245725793644.0,
+          "median": 245725793644.0,
+          "min": 245725793644.0,
+          "n": 5,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.02497308407673402,
+          "max": 51.225445459014736,
+          "mean": 51.20882377500529,
+          "median": 51.207280707982136,
+          "min": 51.19380241600447,
+          "n": 5,
+          "stddev": 0.012788422616038632,
+          "variance": 0.00016354375300640836
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.024972200887236513,
+          "max": 322.46090778439975,
+          "mean": 322.36633467945416,
+          "median": 322.37603270010686,
+          "min": 322.261716849451,
+          "n": 5,
+          "stddev": 0.08050196868897448,
+          "variance": 0.0064805669628006275
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.005283357764598306,
+          "max": 247351978648.0,
+          "mean": 247339359652.8,
+          "median": 247342541464.0,
+          "min": 247317244496.0,
+          "n": 5,
+          "stddev": 13067823.263123939,
+          "variance": 170768004836243.2
+        },
+        "ttft_s": {
+          "cv_percent": 0.02472407079231949,
+          "max": 51.34987145799096,
+          "mean": 51.333497283398174,
+          "median": 51.33262170801754,
+          "min": 51.318466833996354,
+          "n": 5,
+          "stddev": 0.012691730208520767,
+          "variance": 0.00016108001568587856
+        }
+      },
+      "quality_passes": 5,
+      "runs": 5,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:3",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:5",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:7",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/official/loaded-ab-long.jsonl:9"
+      ],
+      "workload_kind": "long"
+    }
+  ],
+  "record_count": 10,
+  "schema_version": 1
+}

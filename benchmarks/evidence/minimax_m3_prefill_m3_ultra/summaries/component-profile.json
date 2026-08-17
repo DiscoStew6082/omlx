@@ -1,0 +1,102 @@
+{
+  "component_profile": {
+    "layer": [
+      {
+        "attention_calls": 300,
+        "attention_s": 18.129518960544374,
+        "moe_calls": 285,
+        "moe_s": 28.731121458404232,
+        "prefill_s": 48.92135341599351
+      },
+      {
+        "attention_calls": 300,
+        "attention_s": 18.12828395474935,
+        "moe_calls": 285,
+        "moe_s": 28.734879587194882,
+        "prefill_s": 48.8691606670036
+      }
+    ],
+    "moe": [
+      {
+        "packed_switch_glu_calls": 285,
+        "packed_switch_glu_s": 28.29423629649682,
+        "prefill_s": 48.71953816601308,
+        "routing_calls": 285,
+        "routing_s": 0.19391138129867613
+      },
+      {
+        "packed_switch_glu_calls": 285,
+        "packed_switch_glu_s": 28.285949087818153,
+        "prefill_s": 48.70629270799691,
+        "routing_calls": 285,
+        "routing_s": 0.18227782478788868
+      }
+    ],
+    "projections": [
+      {
+        "dense_quantized_linear_calls": 2105,
+        "dense_quantized_linear_s": 13.898919364030007,
+        "prefill_s": 53.68663341697538,
+        "quantized_switch_linear_calls": 570,
+        "quantized_switch_linear_s": 28.242926591134164
+      },
+      {
+        "dense_quantized_linear_calls": 2105,
+        "dense_quantized_linear_s": 13.943505489267409,
+        "prefill_s": 53.848772374971304,
+        "quantized_switch_linear_calls": 570,
+        "quantized_switch_linear_s": 28.300546307931654
+      }
+    ],
+    "sparse": [
+      {
+        "attention_calls": 228,
+        "attention_s": 5.505711782258004,
+        "prefill_s": 48.00841504096752,
+        "topk_calls": 228,
+        "topk_s": 0.7137721658218652
+      },
+      {
+        "attention_calls": 228,
+        "attention_s": 5.51098712941166,
+        "prefill_s": 48.02704920899123,
+        "topk_calls": 228,
+        "topk_s": 0.7109517471981235
+      }
+    ],
+    "sync": [
+      {
+        "cache_clear_calls": 7,
+        "cache_clear_s": 0.0316200839006342,
+        "post_eval_idle_calls": 5,
+        "post_eval_idle_s": 0.00015754211926832795,
+        "prefill_s": 47.03388754097978
+      },
+      {
+        "cache_clear_calls": 7,
+        "cache_clear_s": 0.03564845706569031,
+        "post_eval_idle_calls": 5,
+        "post_eval_idle_s": 0.00015925097977742553,
+        "prefill_s": 47.05025274999207
+      }
+    ]
+  },
+  "method": "force target inputs, evaluate target output, then synchronize at each measured boundary",
+  "moe_sort_diagnostic": {
+    "sorted": {
+      "peak_mlx_bytes": 246577204512,
+      "prefill_s": 47.02635224995902,
+      "prefill_tokens_per_s": 351.0372208385435
+    },
+    "unsorted": {
+      "peak_mlx_bytes": 246304014064,
+      "prefill_s": 137.6482364999829,
+      "prefill_tokens_per_s": 119.9288884460358
+    }
+  },
+  "notes": [
+    "Component timing is diagnostic because each boundary perturbs scheduling.",
+    "Projection mode is the most perturbed because it inserts 2675 boundaries.",
+    "The no-sort diagnostic was stopped after one complete pair because unsorted routing was 65.8 percent slower in throughput."
+  ]
+}

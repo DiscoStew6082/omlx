@@ -22,11 +22,11 @@ class _AdaptivePrefillConfig:
 def _get_attr_or_key(obj: Any, name: str) -> Any:
     if type(obj).__module__.startswith("unittest.mock"):
         return None
-    if isinstance(obj, dict):
-        return obj.get(name)
     try:
         return getattr(obj, name)
     except Exception:
+        if isinstance(obj, dict):
+            return obj.get(name)
         return None
 
 

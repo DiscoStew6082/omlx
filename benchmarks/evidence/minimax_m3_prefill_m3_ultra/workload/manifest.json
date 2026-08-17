@@ -1,0 +1,54 @@
+{
+  "model_path": "${OMLX_MINIMAX_MODEL}",
+  "name": "minimax-m3-long-code-prefill-v1",
+  "prompt_sha256": "e31aa541996901bff2e597a0b152839ee7415042607886284393f2ee26f903d5",
+  "prompt_tokens": 16509,
+  "quality_answer": {
+    "attention_executor": "msa_sparse_attention_b1",
+    "num_experts_per_tok": 4,
+    "sparse_block_size": 128,
+    "sparse_layer_count": 57,
+    "sparse_topk_blocks": 16,
+    "topk_builder": [
+      "build_grouped_msa_topk",
+      "build_grouped_msa_topk_blockwise"
+    ]
+  },
+  "runtime_baseline_commit": "ded2bbe4bb30b37dc291a0f76dd34932dbf90ee9",
+  "sampling": {
+    "seed": 1729,
+    "temperature": 1.0,
+    "thinking_mode": "disabled",
+    "top_k": 0,
+    "top_p": 0.95
+  },
+  "schema_version": 1,
+  "sentinel": "MINIMAX-M3-PREFILL-16K-V1",
+  "short_control": {
+    "prompt_sha256": "278c335f6280c7ecc2eafcba3109108a9afaa6d6734f10437766a1bb8a762a91",
+    "prompt_tokens": 2047,
+    "source_chars_included": 5640,
+    "target_tokens": 2048,
+    "token_ids_sha256": "ccc329e5f6e2fb86e893815a1a53a954c21fdde16dd9bce6d480f28eb4a382bf"
+  },
+  "source_chars_included": 67809,
+  "sources": [
+    {
+      "bytes": 70063,
+      "path": "omlx/patches/mlx_vlm_minimax_m3_compat/vendor/mlx_vlm/models/minimax_m3_vl/language.py",
+      "sha256": "97bc9b2c0f261539f006d310b78dda8c56df4a30d3c90a87dbc56a9cdab3454c"
+    },
+    {
+      "bytes": 56761,
+      "path": "omlx/patches/mlx_vlm_minimax_m3_compat/vendor/mlx_vlm/models/minimax_m3_vl/msa.py",
+      "sha256": "9e5bc00fdbf2e6211c91af3ec74138683101d4d7332499c99291bfc1c7429ccf"
+    },
+    {
+      "bytes": 542676,
+      "path": "omlx/scheduler.py",
+      "sha256": "bdedd35c95c65c3f1ff083423c2c335bdb168d0de514de9e592d2f41ba9711ad"
+    }
+  ],
+  "target_tokens": 16512,
+  "token_ids_sha256": "653beb6397c7d06ca3d14827b60ad18fbf12dbdae6111a2a16b1dde01d9605ab"
+}

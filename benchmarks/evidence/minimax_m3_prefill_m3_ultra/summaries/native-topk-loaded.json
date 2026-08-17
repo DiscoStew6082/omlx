@@ -1,0 +1,190 @@
+{
+  "groups": [
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        5
+      ],
+      "label": "candidate-fallback-topk-loaded",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.06100751993974219,
+          "max": 19.331354043019758,
+          "mean": 19.318162866362197,
+          "median": 19.31446441624076,
+          "min": 19.308670139826077,
+          "n": 3,
+          "stddev": 0.011785532062687789,
+          "variance": 0.0001388987660006419
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.02400891946966876,
+          "max": 54.706196416023886,
+          "mean": 54.692557569340956,
+          "median": 54.691475041996455,
+          "min": 54.68000125000253,
+          "n": 3,
+          "stddev": 0.013131092102725296,
+          "variance": 0.00017242557981025463
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 246577643372.0,
+          "mean": 246577643372.0,
+          "median": 246577643372.0,
+          "min": 246577643372.0,
+          "n": 3,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.019783784551405354,
+          "max": 47.65943875000812,
+          "mean": 47.65014704167455,
+          "median": 47.65041204201407,
+          "min": 47.640590333001455,
+          "n": 3,
+          "stddev": 0.009427002429152745,
+          "variance": 8.886837479925175e-05
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.019783949845042052,
+          "max": 346.5112393572635,
+          "mean": 346.4417521379839,
+          "median": 346.43981641637544,
+          "min": 346.37420064031255,
+          "n": 3,
+          "stddev": 0.06853986248526364,
+          "variance": 0.004697712749498851
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.002614367327521776,
+          "max": 247312640568.0,
+          "mean": 247305513496.0,
+          "median": 247303875056.0,
+          "min": 247300024864.0,
+          "n": 3,
+          "stddev": 6465474.54399938,
+          "variance": 41802361079104.0
+        },
+        "ttft_s": {
+          "cv_percent": 0.01984220154408965,
+          "max": 47.784170791012,
+          "mean": 47.775021041336004,
+          "median": 47.77564949999214,
+          "min": 47.76524283300387,
+          "n": 3,
+          "stddev": 0.009479615962753127,
+          "variance": 8.986311880128389e-05
+        }
+      },
+      "quality_passes": 3,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/profile/candidate-fallback-topk-loaded.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/profile/candidate-fallback-topk-loaded.jsonl:2",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/profile/candidate-fallback-topk-loaded.jsonl:3"
+      ],
+      "workload_kind": "long"
+    },
+    {
+      "cache_layer_counts": [
+        60
+      ],
+      "cached_tokens": [
+        0
+      ],
+      "chunk_counts": [
+        5
+      ],
+      "label": "candidate-native-topk-loaded",
+      "metrics": {
+        "decode_tokens_per_s": {
+          "cv_percent": 0.12171813320183168,
+          "max": 19.397979150378028,
+          "mean": 19.371851517292715,
+          "median": 19.365419591539982,
+          "min": 19.352155809960138,
+          "n": 3,
+          "stddev": 0.023579056033479397,
+          "variance": 0.0005559718834299612
+        },
+        "end_to_end_s": {
+          "cv_percent": 0.010876853271604406,
+          "max": 54.07440466701519,
+          "mean": 54.07080293100444,
+          "median": 54.07398795901099,
+          "min": 54.06401616698713,
+          "n": 3,
+          "stddev": 0.005881201897583728,
+          "variance": 3.4588535760142436e-05
+        },
+        "peak_mlx_bytes": {
+          "cv_percent": 0.0,
+          "max": 246577643340.0,
+          "mean": 246577643340.0,
+          "median": 246577643340.0,
+          "min": 246577643340.0,
+          "n": 3,
+          "stddev": 0.0,
+          "variance": 0.0
+        },
+        "prefill_duration_s": {
+          "cv_percent": 0.024687730169863534,
+          "max": 47.05976154102245,
+          "mean": 47.04692025000501,
+          "median": 47.0438507089857,
+          "min": 47.03714850000688,
+          "n": 3,
+          "stddev": 0.011614816724552123,
+          "variance": 0.0001349039675449357
+        },
+        "prefill_tokens_per_s": {
+          "cv_percent": 0.0246854834685223,
+          "max": 350.9566486581895,
+          "mean": 350.8837684374187,
+          "median": 350.9066488225816,
+          "min": 350.788007831485,
+          "n": 3,
+          "stddev": 0.08661735465134705,
+          "variance": 0.007502566126797232
+        },
+        "process_phys_after_prefill_bytes": {
+          "cv_percent": 0.014822061620026205,
+          "max": 247225166344.0,
+          "mean": 247203004229.33334,
+          "median": 247223134752.0,
+          "min": 247160711592.0,
+          "n": 3,
+          "stddev": 36640581.61342777,
+          "variance": 1342532220970261.2
+        },
+        "ttft_s": {
+          "cv_percent": 0.025029979053971963,
+          "max": 47.184492500004126,
+          "mean": 47.171411403008584,
+          "median": 47.16819783402025,
+          "min": 47.16154387500137,
+          "n": 3,
+          "stddev": 0.01180699439363599,
+          "variance": 0.00013940511661135168
+        }
+      },
+      "quality_passes": 3,
+      "runs": 3,
+      "sources": [
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/profile/candidate-native-topk-loaded.jsonl:1",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/profile/candidate-native-topk-loaded.jsonl:2",
+        "benchmarks/evidence/minimax_m3_prefill_m3_ultra/raw/profile/candidate-native-topk-loaded.jsonl:3"
+      ],
+      "workload_kind": "long"
+    }
+  ],
+  "record_count": 6,
+  "schema_version": 1
+}
