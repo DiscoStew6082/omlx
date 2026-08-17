@@ -1,0 +1,104 @@
+{
+  "baseline": {
+    "median_ms": 60.33025,
+    "samples_ms": [
+      60.368167,
+      60.33025,
+      59.565458,
+      60.482958,
+      59.44925
+    ]
+  },
+  "benchmark": "glm52_real_moe_layer_ab",
+  "candidate": {
+    "median_ms": 54.25875,
+    "samples_ms": [
+      54.25875,
+      53.49175,
+      54.3065,
+      54.447,
+      53.458458
+    ]
+  },
+  "command": [
+    "${HARNESS_DIR}/glm52_layer_ab.py",
+    "${MODEL_DIR}",
+    "--source-root",
+    "${OMLX_SOURCE_ROOT}",
+    "--candidate",
+    "477da886f48d566c7012cb3e11accc489472e4b7",
+    "--upstream-base",
+    "cfec50213da8ee46e18e03a2e27cc3e402c072f2",
+    "--output",
+    "${CAMPAIGN_EVIDENCE_DIR}/layer-3-pp2048.json",
+    "--layer",
+    "3",
+    "--tokens",
+    "2048",
+    "--warmup",
+    "2",
+    "--iterations",
+    "1",
+    "--samples",
+    "5"
+  ],
+  "correctness": {
+    "allclose_atol": 0.05,
+    "allclose_rtol": 0.02,
+    "max_abs_error": 0.0,
+    "mean_abs_error": 0.0,
+    "numerically_close": true,
+    "relative_max_error": 0.0,
+    "sorted_experts_match": true,
+    "weighted_sum_restoration": true
+  },
+  "environment": {
+    "device": {
+      "architecture": "applegpu_g15d",
+      "device_name": "Apple M3 Ultra",
+      "max_buffer_length": 373662154752,
+      "max_recommended_working_set_size": 498216206336,
+      "memory_size": 549755813888,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.0",
+    "nanobind": "2.13.0",
+    "python": "3.11.15"
+  },
+  "median_paired_speedup": 1.112064437025101,
+  "model": {
+    "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+    "layer": 3,
+    "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+    "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+  },
+  "paired_speedups": [
+    1.1125978206280094,
+    1.1278421438820003,
+    1.0968384631673924,
+    1.1108593310926222,
+    1.112064437025101
+  ],
+  "parameters": {
+    "block_bm": 32,
+    "block_variant": 2,
+    "dtype": "bf16",
+    "experts": 256,
+    "hidden_size": 6144,
+    "iterations": 1,
+    "moe_intermediate_size": 2048,
+    "quantization": "4-bit affine, group_size=64",
+    "random_seed": 23,
+    "routes": 16384,
+    "routes_per_token": 8,
+    "samples": 5,
+    "tokens": 2048,
+    "warmup": 2
+  },
+  "source": {
+    "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+    "tracked_worktree_clean": true,
+    "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+  },
+  "time_reduction_percent": 10.077153202100952
+}

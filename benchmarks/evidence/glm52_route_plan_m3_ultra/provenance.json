@@ -1,0 +1,175 @@
+{
+  "controls": {
+    "cached_tokens": 0,
+    "hardware_constant": true,
+    "model_revision_constant": true,
+    "mtp_enabled": false,
+    "paged_ssd_cache_enabled": false,
+    "prefix_cache_enabled": false,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "description": "Privacy-safe projection of the GLM-5.2 M3 Ultra route-plan experiment",
+  "environment": {
+    "device": "Apple M3 Ultra",
+    "mlx": "0.32.0",
+    "nanobind": "2.13.0",
+    "python": "3.11.15",
+    "unified_memory_gib": 512
+  },
+  "model": {
+    "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+    "repo_id": "Jundot/GLM-5.2-oQ4e-mtp",
+    "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+    "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+  },
+  "projection": {
+    "artifacts": [
+      {
+        "logical_source": "final-loaded-confirmation.json",
+        "projected_path": "results/final-loaded-confirmation.json",
+        "projected_sha256": "18a685d2dc4bdab39ce299919000f89837e48f590c20915c3dfcd7cd0e059d8a",
+        "source_sha256": "8789aa7d9e2ad8f5291ac9d8cdd97a57dc49be51ea92ee141c9a6b1221833a6e",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "loaded-matrix.json",
+        "projected_path": "results/campaign-loaded-matrix.json",
+        "projected_sha256": "9a3b42e4cf610f9cd6627392ed283dc5bb587610cca767b29112adf54abec9b9",
+        "source_sha256": "e05bec742690924d47c89ccbc9b3939d31f22a6012746422520325014bde4890",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "layer-3-pp1024.json",
+        "projected_path": "results/layer-3-pp1024.json",
+        "projected_sha256": "7577cbdbf9823eab1ce56196db770eb56ae14f5c6ee10b61933d59cb818a3b21",
+        "source_sha256": "99a5650df5f0f1a2bfd6d21487e96a3483f93bfe18c93e53077df4907af85370",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "layer-3-pp2048.json",
+        "projected_path": "results/layer-3-pp2048.json",
+        "projected_sha256": "f4e87c653e55275b1fa57d96113d2ef85c8abdd03d5c162cf415cb8a5ff1784a",
+        "source_sha256": "6b33f9f16e8545f3a910f959a4234a88ec745b08e022cb7cd3a6ee972e22cd06",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "summary.json",
+        "projected_path": "results/fresh-process/summary.json",
+        "projected_sha256": "697e9500cc5a05ca5cb59a651e40c2f43c27b6720dd3da2088801ef1ce0a90e8",
+        "source_sha256": "c0a14727716e5f385a256bc91dab1f9b590e9184c8fa9e134d970b8b10133350",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "run-01-off.json",
+        "projected_path": "results/fresh-process/run-01-off.json",
+        "projected_sha256": "e604d9adf4c733f547d3b5704a1fef32a1d5bd7e209ae9dd2910ab003d3bcdc9",
+        "source_sha256": "44aa8c1addf6e452ff6c97662eafe60e57ce0426f9caa1047598009e856556f8",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "run-02-on.json",
+        "projected_path": "results/fresh-process/run-02-on.json",
+        "projected_sha256": "8d854ed73ce0be26b8716106aca2e62ffed18a7b3b84c97bae87011d811af595",
+        "source_sha256": "ea55cf3c17748297ce5b554ca8e772dea8740df4b79e3fcd34aafdb1846e191c",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "run-03-on.json",
+        "projected_path": "results/fresh-process/run-03-on.json",
+        "projected_sha256": "234925c0922f41d4a7bd3ca8c28f6d54826accd169a1152765882adb3a90504d",
+        "source_sha256": "be47ddbcdd48e48a483f2210568e43cc0577a4d58f12c37f93bdaad92532efc1",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "run-04-off.json",
+        "projected_path": "results/fresh-process/run-04-off.json",
+        "projected_sha256": "f260fe43605fa6d0f841fe604a8adb3bef981fa27b78006e4196bc576b647a29",
+        "source_sha256": "af6fa39a2e9756adfb3eb9b7dd78efffdd47f656d022dde4f7f1542798b4f7a8",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "run-05-off.json",
+        "projected_path": "results/fresh-process/run-05-off.json",
+        "projected_sha256": "fa7f16a65968e2929adb6ea34b13c6365a254b6c07113f6267cce7fa33175e3c",
+        "source_sha256": "cfb73f44dde5e3ee416a49187deb22e2f24c1ccb832239438a017d59aa419429",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "run-06-on.json",
+        "projected_path": "results/fresh-process/run-06-on.json",
+        "projected_sha256": "0d8c359dc1104ef3b40663abdbbc6f1c131e0a5e4b6e6777038071b7fd6b8c0d",
+        "source_sha256": "328bb76ecc0d2d5421952a9cd35923925e753f36e8d95d6c76e4680f269f0dc3",
+        "transformation": "absolute local paths replaced with documented placeholders"
+      },
+      {
+        "logical_source": "native-tests.xml",
+        "projected_path": "validation/final-native-tests.xml",
+        "projected_sha256": "fe5bfde8e958b086b1155aed9f9abbeba4ed9a96eb083246aa601d50f01cd881",
+        "source_sha256": "0f3f3eae1624679e0de18818b25cb6cd8827466a191d5cabd815f6946e392e89",
+        "transformation": "machine hostname replaced with ${HOSTNAME}"
+      },
+      {
+        "logical_source": "glm-tests.xml",
+        "projected_path": "validation/final-glm-tests.xml",
+        "projected_sha256": "953d5982e96b3e3c4910f48bee047897ee4989bf58de9455d88a7cfeb3c89885",
+        "source_sha256": "2978fe54589d35636aea07ef33e004a0aeed58a99c5006d63d0c037c8fb77226",
+        "transformation": "machine hostname replaced with ${HOSTNAME}"
+      },
+      {
+        "logical_source": "focused-tests.xml",
+        "projected_path": "validation/campaign-focused-tests.xml",
+        "projected_sha256": "0138f4ef9408651185da3e5688f17e83e2690c5b47fd3b33cbbb8559f8d8808c",
+        "source_sha256": "cf6f0a1569437e0d6142ce1f2ca4f38cc25e17805aad829bfd33b769c72ce432",
+        "transformation": "machine hostname replaced with ${HOSTNAME}"
+      },
+      {
+        "logical_source": "glm52_engine_ab.py",
+        "projected_path": "harness/glm52_engine_ab.py",
+        "projected_sha256": "78794aa6370a69fe0f63eaa450fb09e941d9eadef91b6446289df0f04a6f8758",
+        "source_sha256": "615ab5fe2edf1a6e523b1ea810b58c6253fd7c22c3d2afbf7717a3e662c860e9",
+        "transformation": "Apache-2.0 SPDX comment added after shebang"
+      },
+      {
+        "logical_source": "glm52_cold_bracket.py",
+        "projected_path": "harness/glm52_cold_bracket.py",
+        "projected_sha256": "ee1dc2cab5e374d81f7fd6a17bdc8addaacb5cd7da580c54ea3a7f4f42e439ac",
+        "source_sha256": "a7d3b9c8483f35ea3153c611f25c462733442a809e1c35c490918f4e13a3d0ea",
+        "transformation": "Apache-2.0 SPDX comment added after shebang"
+      },
+      {
+        "logical_source": "glm52_layer_ab.py",
+        "projected_path": "harness/glm52_layer_ab.py",
+        "projected_sha256": "d081fdd14a1aa0bf1902557855844d0790b35d7bc0a0bace0a11711fae834b26",
+        "source_sha256": "18cffa773adf1c615eea8361b3cfc73478b6386bd6f4caf2f8cb3c9e4e040815",
+        "transformation": "Apache-2.0 SPDX comment added after shebang"
+      }
+    ],
+    "excluded": [
+      "local README and PR drafts",
+      "process wrapper JSON containing duplicate stdout and machine-local stderr",
+      "duplicate candidate patch; the code review branch is canonical",
+      "native binaries and model weights",
+      "local archive files"
+    ],
+    "path_placeholders": [
+      "${HARNESS_DIR}/glm52_engine_ab.py",
+      "${HARNESS_DIR}/glm52_cold_bracket.py",
+      "${HARNESS_DIR}/glm52_layer_ab.py",
+      "${CAMPAIGN_EVIDENCE_DIR}",
+      "${FINAL_EVIDENCE_DIR}",
+      "${OMLX_SOURCE_ROOT}",
+      "${MODEL_DIR}",
+      "${PYTHON}",
+      "${HOSTNAME}"
+    ]
+  },
+  "schema_version": 1,
+  "source": {
+    "campaign_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2",
+    "campaign_candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+    "candidate_diff_sha256": "544d56d432e803f4d8e1bef73b3bf18e9735365dd6b196d80adeabc7823656eb",
+    "final_base": "2c10f0fb69af2a95e2c5764313f128774f1dda9f",
+    "final_candidate": "3474c3a3b3f4d0ca5e864c07196707464013436e"
+  }
+}

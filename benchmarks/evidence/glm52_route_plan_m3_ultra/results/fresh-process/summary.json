@@ -1,0 +1,648 @@
+{
+  "baseline": {
+    "dispatch_calls": [
+      0,
+      0,
+      0
+    ],
+    "median_processing_tps": 114.9,
+    "median_ttft_ms": 17818.2,
+    "processing_tps": [
+      122.0,
+      114.6,
+      114.9
+    ],
+    "ttft_ms": [
+      16793.7,
+      17875.6,
+      17818.2
+    ]
+  },
+  "benchmark": "glm52_fresh_process_bracket",
+  "candidate": {
+    "dispatch_calls": [
+      75,
+      75,
+      75
+    ],
+    "median_processing_tps": 118.4,
+    "median_ttft_ms": 17291.1,
+    "processing_tps": [
+      119.3,
+      118.4,
+      114.3
+    ],
+    "ttft_ms": [
+      17163.1,
+      17291.1,
+      17918.6
+    ]
+  },
+  "invariants": {
+    "all_cached_tokens_zero": true,
+    "all_mtp_disabled": true,
+    "all_paged_ssd_cache_disabled": true,
+    "all_prefix_cache_disabled": true,
+    "baseline_never_dispatched": true,
+    "candidate_always_dispatched": true,
+    "model_revision_stable": true,
+    "outputs_match": true,
+    "prompt_hashes_match": true,
+    "source_identity_stable": true
+  },
+  "median_processing_speedup": 1.030461270670148,
+  "median_ttft_reduction": 0.02958211267131372,
+  "model_revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+  "orchestrator_command": [
+    "${HARNESS_DIR}/glm52_cold_bracket.py",
+    "${MODEL_DIR}",
+    "--source-root",
+    "${OMLX_SOURCE_ROOT}",
+    "--engine-harness",
+    "${HARNESS_DIR}/glm52_engine_ab.py",
+    "--python",
+    "${PYTHON}",
+    "--candidate",
+    "477da886f48d566c7012cb3e11accc489472e4b7",
+    "--upstream-base",
+    "cfec50213da8ee46e18e03a2e27cc3e402c072f2",
+    "--output-dir",
+    "${CAMPAIGN_EVIDENCE_DIR}/fresh-process",
+    "--length",
+    "2048",
+    "--gen",
+    "1"
+  ],
+  "output_sha256": [
+    "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be"
+  ],
+  "parameters": {
+    "fresh_process_per_run": true,
+    "generation_tokens": 1,
+    "os_file_cache_flushed": false,
+    "prompt_tokens": 2048
+  },
+  "prompt_sha256": [
+    "3df436fc6d261ce36035a2d07e89422e23fd6c8db6eb428f23ff5e4d9125e5ac"
+  ],
+  "records": [
+    {
+      "environment": {
+        "device": {
+          "architecture": "applegpu_g15d",
+          "device_name": "Apple M3 Ultra",
+          "max_buffer_length": 373662154752,
+          "max_recommended_working_set_size": 498216206336,
+          "memory_size": 549755813888,
+          "resource_limit": 499000
+        },
+        "mlx": "0.32.0",
+        "nanobind": "2.13.0",
+        "native": {
+          "artifacts": [
+            {
+              "name": "_ext.cpython-311-darwin.so",
+              "sha256": "4316a945b0ebbbb559f4b17beb40224945ee1a5fe5bc33dc11e07362f5ee38d0",
+              "size": 149960
+            },
+            {
+              "name": "libomlx_glm_kernel_ops.dylib",
+              "sha256": "db9b084756cf0c2a0efc986e77f1e0d500132e0ff9a3faa5d68afcd316dd5832",
+              "size": 277264
+            },
+            {
+              "name": "omlx_glm_kernels.metallib",
+              "sha256": "b0668c7d79900bf37ed8a476c1fcd90ffbb6fd745d0ad9458dfda20a17394888",
+              "size": 2373448
+            }
+          ]
+        },
+        "python": "3.11.15"
+      },
+      "index": 1,
+      "mode": "off",
+      "model": {
+        "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+        "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+        "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+      },
+      "parameters": {
+        "batch_size": null,
+        "context_profile": "code_python",
+        "fixed_prompt_uuid": "00000000-0000-0000-0000-000000000000",
+        "generation_tokens": 1,
+        "lengths": [
+          2048
+        ],
+        "mode": "off",
+        "samples_per_mode": null,
+        "skip_cache_store": true,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "warmup_per_mode": null
+      },
+      "prompt_sha256": "3df436fc6d261ce36035a2d07e89422e23fd6c8db6eb428f23ff5e4d9125e5ac",
+      "runtime": {
+        "mtp_enabled": false,
+        "paged_ssd_cache_dir": null,
+        "prefix_cache_enabled": false
+      },
+      "sample": {
+        "cached_tokens": [
+          0
+        ],
+        "dispatch_calls": 0,
+        "e2e_latency_s": 16.851,
+        "output_sha256": [
+          "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be"
+        ],
+        "outputs": [
+          {
+            "cached_tokens": 0,
+            "completion_tokens": 1,
+            "finish_reason": "length",
+            "prompt_tokens": 2048,
+            "sha256": "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be",
+            "text_sha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+            "token_ids": []
+          }
+        ],
+        "processing_tps": 122.0,
+        "ttft_ms": 16793.7
+      },
+      "source": {
+        "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+        "tracked_worktree_clean": true,
+        "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+      },
+      "wall_seconds": 92.05083770799683
+    },
+    {
+      "environment": {
+        "device": {
+          "architecture": "applegpu_g15d",
+          "device_name": "Apple M3 Ultra",
+          "max_buffer_length": 373662154752,
+          "max_recommended_working_set_size": 498216206336,
+          "memory_size": 549755813888,
+          "resource_limit": 499000
+        },
+        "mlx": "0.32.0",
+        "nanobind": "2.13.0",
+        "native": {
+          "artifacts": [
+            {
+              "name": "_ext.cpython-311-darwin.so",
+              "sha256": "4316a945b0ebbbb559f4b17beb40224945ee1a5fe5bc33dc11e07362f5ee38d0",
+              "size": 149960
+            },
+            {
+              "name": "libomlx_glm_kernel_ops.dylib",
+              "sha256": "db9b084756cf0c2a0efc986e77f1e0d500132e0ff9a3faa5d68afcd316dd5832",
+              "size": 277264
+            },
+            {
+              "name": "omlx_glm_kernels.metallib",
+              "sha256": "b0668c7d79900bf37ed8a476c1fcd90ffbb6fd745d0ad9458dfda20a17394888",
+              "size": 2373448
+            }
+          ]
+        },
+        "python": "3.11.15"
+      },
+      "index": 2,
+      "mode": "on",
+      "model": {
+        "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+        "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+        "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+      },
+      "parameters": {
+        "batch_size": null,
+        "context_profile": "code_python",
+        "fixed_prompt_uuid": "00000000-0000-0000-0000-000000000000",
+        "generation_tokens": 1,
+        "lengths": [
+          2048
+        ],
+        "mode": "on",
+        "samples_per_mode": null,
+        "skip_cache_store": true,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "warmup_per_mode": null
+      },
+      "prompt_sha256": "3df436fc6d261ce36035a2d07e89422e23fd6c8db6eb428f23ff5e4d9125e5ac",
+      "runtime": {
+        "mtp_enabled": false,
+        "paged_ssd_cache_dir": null,
+        "prefix_cache_enabled": false
+      },
+      "sample": {
+        "cached_tokens": [
+          0
+        ],
+        "dispatch_calls": 75,
+        "e2e_latency_s": 17.22,
+        "output_sha256": [
+          "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be"
+        ],
+        "outputs": [
+          {
+            "cached_tokens": 0,
+            "completion_tokens": 1,
+            "finish_reason": "length",
+            "prompt_tokens": 2048,
+            "sha256": "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be",
+            "text_sha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+            "token_ids": []
+          }
+        ],
+        "processing_tps": 119.3,
+        "ttft_ms": 17163.1
+      },
+      "source": {
+        "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+        "tracked_worktree_clean": true,
+        "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+      },
+      "wall_seconds": 92.40337304200511
+    },
+    {
+      "environment": {
+        "device": {
+          "architecture": "applegpu_g15d",
+          "device_name": "Apple M3 Ultra",
+          "max_buffer_length": 373662154752,
+          "max_recommended_working_set_size": 498216206336,
+          "memory_size": 549755813888,
+          "resource_limit": 499000
+        },
+        "mlx": "0.32.0",
+        "nanobind": "2.13.0",
+        "native": {
+          "artifacts": [
+            {
+              "name": "_ext.cpython-311-darwin.so",
+              "sha256": "4316a945b0ebbbb559f4b17beb40224945ee1a5fe5bc33dc11e07362f5ee38d0",
+              "size": 149960
+            },
+            {
+              "name": "libomlx_glm_kernel_ops.dylib",
+              "sha256": "db9b084756cf0c2a0efc986e77f1e0d500132e0ff9a3faa5d68afcd316dd5832",
+              "size": 277264
+            },
+            {
+              "name": "omlx_glm_kernels.metallib",
+              "sha256": "b0668c7d79900bf37ed8a476c1fcd90ffbb6fd745d0ad9458dfda20a17394888",
+              "size": 2373448
+            }
+          ]
+        },
+        "python": "3.11.15"
+      },
+      "index": 3,
+      "mode": "on",
+      "model": {
+        "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+        "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+        "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+      },
+      "parameters": {
+        "batch_size": null,
+        "context_profile": "code_python",
+        "fixed_prompt_uuid": "00000000-0000-0000-0000-000000000000",
+        "generation_tokens": 1,
+        "lengths": [
+          2048
+        ],
+        "mode": "on",
+        "samples_per_mode": null,
+        "skip_cache_store": true,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "warmup_per_mode": null
+      },
+      "prompt_sha256": "3df436fc6d261ce36035a2d07e89422e23fd6c8db6eb428f23ff5e4d9125e5ac",
+      "runtime": {
+        "mtp_enabled": false,
+        "paged_ssd_cache_dir": null,
+        "prefix_cache_enabled": false
+      },
+      "sample": {
+        "cached_tokens": [
+          0
+        ],
+        "dispatch_calls": 75,
+        "e2e_latency_s": 17.349,
+        "output_sha256": [
+          "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be"
+        ],
+        "outputs": [
+          {
+            "cached_tokens": 0,
+            "completion_tokens": 1,
+            "finish_reason": "length",
+            "prompt_tokens": 2048,
+            "sha256": "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be",
+            "text_sha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+            "token_ids": []
+          }
+        ],
+        "processing_tps": 118.4,
+        "ttft_ms": 17291.1
+      },
+      "source": {
+        "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+        "tracked_worktree_clean": true,
+        "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+      },
+      "wall_seconds": 92.9023515410081
+    },
+    {
+      "environment": {
+        "device": {
+          "architecture": "applegpu_g15d",
+          "device_name": "Apple M3 Ultra",
+          "max_buffer_length": 373662154752,
+          "max_recommended_working_set_size": 498216206336,
+          "memory_size": 549755813888,
+          "resource_limit": 499000
+        },
+        "mlx": "0.32.0",
+        "nanobind": "2.13.0",
+        "native": {
+          "artifacts": [
+            {
+              "name": "_ext.cpython-311-darwin.so",
+              "sha256": "4316a945b0ebbbb559f4b17beb40224945ee1a5fe5bc33dc11e07362f5ee38d0",
+              "size": 149960
+            },
+            {
+              "name": "libomlx_glm_kernel_ops.dylib",
+              "sha256": "db9b084756cf0c2a0efc986e77f1e0d500132e0ff9a3faa5d68afcd316dd5832",
+              "size": 277264
+            },
+            {
+              "name": "omlx_glm_kernels.metallib",
+              "sha256": "b0668c7d79900bf37ed8a476c1fcd90ffbb6fd745d0ad9458dfda20a17394888",
+              "size": 2373448
+            }
+          ]
+        },
+        "python": "3.11.15"
+      },
+      "index": 4,
+      "mode": "off",
+      "model": {
+        "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+        "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+        "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+      },
+      "parameters": {
+        "batch_size": null,
+        "context_profile": "code_python",
+        "fixed_prompt_uuid": "00000000-0000-0000-0000-000000000000",
+        "generation_tokens": 1,
+        "lengths": [
+          2048
+        ],
+        "mode": "off",
+        "samples_per_mode": null,
+        "skip_cache_store": true,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "warmup_per_mode": null
+      },
+      "prompt_sha256": "3df436fc6d261ce36035a2d07e89422e23fd6c8db6eb428f23ff5e4d9125e5ac",
+      "runtime": {
+        "mtp_enabled": false,
+        "paged_ssd_cache_dir": null,
+        "prefix_cache_enabled": false
+      },
+      "sample": {
+        "cached_tokens": [
+          0
+        ],
+        "dispatch_calls": 0,
+        "e2e_latency_s": 17.933,
+        "output_sha256": [
+          "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be"
+        ],
+        "outputs": [
+          {
+            "cached_tokens": 0,
+            "completion_tokens": 1,
+            "finish_reason": "length",
+            "prompt_tokens": 2048,
+            "sha256": "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be",
+            "text_sha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+            "token_ids": []
+          }
+        ],
+        "processing_tps": 114.6,
+        "ttft_ms": 17875.6
+      },
+      "source": {
+        "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+        "tracked_worktree_clean": true,
+        "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+      },
+      "wall_seconds": 93.60556395800086
+    },
+    {
+      "environment": {
+        "device": {
+          "architecture": "applegpu_g15d",
+          "device_name": "Apple M3 Ultra",
+          "max_buffer_length": 373662154752,
+          "max_recommended_working_set_size": 498216206336,
+          "memory_size": 549755813888,
+          "resource_limit": 499000
+        },
+        "mlx": "0.32.0",
+        "nanobind": "2.13.0",
+        "native": {
+          "artifacts": [
+            {
+              "name": "_ext.cpython-311-darwin.so",
+              "sha256": "4316a945b0ebbbb559f4b17beb40224945ee1a5fe5bc33dc11e07362f5ee38d0",
+              "size": 149960
+            },
+            {
+              "name": "libomlx_glm_kernel_ops.dylib",
+              "sha256": "db9b084756cf0c2a0efc986e77f1e0d500132e0ff9a3faa5d68afcd316dd5832",
+              "size": 277264
+            },
+            {
+              "name": "omlx_glm_kernels.metallib",
+              "sha256": "b0668c7d79900bf37ed8a476c1fcd90ffbb6fd745d0ad9458dfda20a17394888",
+              "size": 2373448
+            }
+          ]
+        },
+        "python": "3.11.15"
+      },
+      "index": 5,
+      "mode": "off",
+      "model": {
+        "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+        "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+        "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+      },
+      "parameters": {
+        "batch_size": null,
+        "context_profile": "code_python",
+        "fixed_prompt_uuid": "00000000-0000-0000-0000-000000000000",
+        "generation_tokens": 1,
+        "lengths": [
+          2048
+        ],
+        "mode": "off",
+        "samples_per_mode": null,
+        "skip_cache_store": true,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "warmup_per_mode": null
+      },
+      "prompt_sha256": "3df436fc6d261ce36035a2d07e89422e23fd6c8db6eb428f23ff5e4d9125e5ac",
+      "runtime": {
+        "mtp_enabled": false,
+        "paged_ssd_cache_dir": null,
+        "prefix_cache_enabled": false
+      },
+      "sample": {
+        "cached_tokens": [
+          0
+        ],
+        "dispatch_calls": 0,
+        "e2e_latency_s": 17.876,
+        "output_sha256": [
+          "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be"
+        ],
+        "outputs": [
+          {
+            "cached_tokens": 0,
+            "completion_tokens": 1,
+            "finish_reason": "length",
+            "prompt_tokens": 2048,
+            "sha256": "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be",
+            "text_sha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+            "token_ids": []
+          }
+        ],
+        "processing_tps": 114.9,
+        "ttft_ms": 17818.2
+      },
+      "source": {
+        "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+        "tracked_worktree_clean": true,
+        "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+      },
+      "wall_seconds": 93.14604216700536
+    },
+    {
+      "environment": {
+        "device": {
+          "architecture": "applegpu_g15d",
+          "device_name": "Apple M3 Ultra",
+          "max_buffer_length": 373662154752,
+          "max_recommended_working_set_size": 498216206336,
+          "memory_size": 549755813888,
+          "resource_limit": 499000
+        },
+        "mlx": "0.32.0",
+        "nanobind": "2.13.0",
+        "native": {
+          "artifacts": [
+            {
+              "name": "_ext.cpython-311-darwin.so",
+              "sha256": "4316a945b0ebbbb559f4b17beb40224945ee1a5fe5bc33dc11e07362f5ee38d0",
+              "size": 149960
+            },
+            {
+              "name": "libomlx_glm_kernel_ops.dylib",
+              "sha256": "db9b084756cf0c2a0efc986e77f1e0d500132e0ff9a3faa5d68afcd316dd5832",
+              "size": 277264
+            },
+            {
+              "name": "omlx_glm_kernels.metallib",
+              "sha256": "b0668c7d79900bf37ed8a476c1fcd90ffbb6fd745d0ad9458dfda20a17394888",
+              "size": 2373448
+            }
+          ]
+        },
+        "python": "3.11.15"
+      },
+      "index": 6,
+      "mode": "on",
+      "model": {
+        "config_sha256": "08ea1b1a7661eae041c7ecaff2976fd6ef7071c73fab331c9823d1947a9c6023",
+        "revision": "dad7d33661ccaba82753141f13fd454c657d6f91",
+        "weight_index_sha256": "125b97ea2652a3feb8a96feb2754f2a69eed890ced82d78333940e9454afd256"
+      },
+      "parameters": {
+        "batch_size": null,
+        "context_profile": "code_python",
+        "fixed_prompt_uuid": "00000000-0000-0000-0000-000000000000",
+        "generation_tokens": 1,
+        "lengths": [
+          2048
+        ],
+        "mode": "on",
+        "samples_per_mode": null,
+        "skip_cache_store": true,
+        "temperature": 0.0,
+        "top_p": 1.0,
+        "warmup_per_mode": null
+      },
+      "prompt_sha256": "3df436fc6d261ce36035a2d07e89422e23fd6c8db6eb428f23ff5e4d9125e5ac",
+      "runtime": {
+        "mtp_enabled": false,
+        "paged_ssd_cache_dir": null,
+        "prefix_cache_enabled": false
+      },
+      "sample": {
+        "cached_tokens": [
+          0
+        ],
+        "dispatch_calls": 75,
+        "e2e_latency_s": 17.977,
+        "output_sha256": [
+          "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be"
+        ],
+        "outputs": [
+          {
+            "cached_tokens": 0,
+            "completion_tokens": 1,
+            "finish_reason": "length",
+            "prompt_tokens": 2048,
+            "sha256": "44ad179c4b1a932d3644b4343f21c52f0d293ebeb6bf329a5f7cc08e596895be",
+            "text_sha256": "b760f44fa5965c2474a3b471467a22c43185152129295af588b022ae50b50903",
+            "token_ids": []
+          }
+        ],
+        "processing_tps": 114.3,
+        "ttft_ms": 17918.6
+      },
+      "source": {
+        "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+        "tracked_worktree_clean": true,
+        "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+      },
+      "wall_seconds": 93.93475283298176
+    }
+  ],
+  "sequence": [
+    "off",
+    "on",
+    "on",
+    "off",
+    "off",
+    "on"
+  ],
+  "source": {
+    "candidate": "477da886f48d566c7012cb3e11accc489472e4b7",
+    "upstream_base": "cfec50213da8ee46e18e03a2e27cc3e402c072f2"
+  }
+}
