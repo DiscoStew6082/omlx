@@ -28,6 +28,8 @@ from mlx_lm.models.cache import (
     RotatingKVCache,
 )
 
+from omlx.cache_conversion import CacheConversionContext, convert_cache_layer
+
 logger = logging.getLogger(__name__)
 _PATCHED = False
 
@@ -66,11 +68,13 @@ def apply_generate_patch() -> bool:
         batch-aware caches.
         """
 
+        context = CacheConversionContext.fresh(left_padding)
+
         def to_batch_cache(c):
-            model_owned_to_batch = getattr(c, "to_batch", None)
-            if callable(model_owned_to_batch):
-                return model_owned_to_batch(left_padding)
-            elif type(c) is KVCache:
+            return convert_cache_layer(c, context, fallback)
+
+        def fallback(c):
+            if type(c) is KVCache:
                 return BatchKVCache(left_padding)
             elif isinstance(c, ArraysCache):
                 c.left_padding = mx.array(left_padding)

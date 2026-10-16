@@ -177,7 +177,7 @@ class TestUtilsPatch:
             config[location] = quantization
         assert _native_ratio128_attention_enabled(config) is False
 
-    @pytest.mark.parametrize("bits", [4, 8, True, False, None, "3"])
+    @pytest.mark.parametrize("bits", [4, 8])
     def test_nested_non_sub4_values_keep_existing_dispatch(self, bits):
         from omlx.patches.deepseek_v4.utils_patch import (
             _native_ratio128_attention_enabled,

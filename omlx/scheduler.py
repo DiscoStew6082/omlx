@@ -55,6 +55,7 @@ from .cache.observability import BoundarySnapshotDiagnostics, CacheRateTracker
 from .cache.paged_cache import PagedCacheManager
 from .cache.pooling_delta import compact_pooling_cache_snapshot
 from .cache.prefix_cache import BlockAwarePrefixCache, cachelist_pm_member_plan
+from .cache_conversion import CacheConversionContext, convert_cache_layer
 from .decode_activity import get_decode_activity
 from .exceptions import (
     PrefillMemoryExceededError,
@@ -954,13 +955,7 @@ def _patched_make_cache(model, left_padding, max_kv_size):
 
     model_cache = model.make_cache()
 
-    def has_model_owned_conversion(cache_obj):
-        if callable(getattr(cache_obj, "to_batch", None)):
-            return True
-        sub_caches = getattr(cache_obj, "caches", None)
-        return isinstance(sub_caches, (list, tuple)) and any(
-            has_model_owned_conversion(child) for child in sub_caches
-        )
+    context = CacheConversionContext.fresh(left_padding)
 
     class _SingleCacheModel:
         layers = (None,)
@@ -971,22 +966,12 @@ def _patched_make_cache(model, left_padding, max_kv_size):
         def make_cache(self):
             return [self.cache_obj]
 
-    def convert(cache_obj):
-        to_batch = getattr(cache_obj, "to_batch", None)
-        if callable(to_batch):
-            return to_batch(left_padding)
-
-        sub_caches = getattr(cache_obj, "caches", None)
-        if isinstance(sub_caches, (list, tuple)) and any(
-            has_model_owned_conversion(child) for child in sub_caches
-        ):
-            return type(cache_obj)(*(convert(child) for child in sub_caches))
-
+    def fallback(cache_obj):
         return _original_make_cache(
             _SingleCacheModel(cache_obj), left_padding, max_kv_size
         )[0]
 
-    return [convert(cache_obj) for cache_obj in model_cache]
+    return [convert_cache_layer(c, context, fallback) for c in model_cache]
 
 
 def _cache_layer_supports_singleton_passthrough(cache_obj: Any) -> bool:
@@ -997,27 +982,20 @@ def _cache_layer_supports_singleton_passthrough(cache_obj: Any) -> bool:
 
 
 def _to_batched_cache_layer(cache_obj: Any) -> Any:
-    sub_caches = getattr(cache_obj, "caches", None)
-    if isinstance(sub_caches, (list, tuple)):
-        converted = tuple(_to_batched_cache_layer(c) for c in sub_caches)
-        if all(a is b for a, b in zip(sub_caches, converted)):
-            return cache_obj
-        return type(cache_obj)(*converted)
-    if isinstance(cache_obj, _REGULAR_SINGLETON_CACHE_TYPES):
-        return cache_obj.merge([cache_obj])
-    if (
-        _TQ_SINGLETON_CACHE_TYPE is not None
-        and type(cache_obj) is _TQ_SINGLETON_CACHE_TYPE
-    ):
-        return cache_obj.merge([cache_obj])
-    # Model-owned singletons (e.g. qwen4_exp QSAKVCache) declare their batch
-    # conversion via to_batch, which _patched_make_cache honors at creation;
-    # honor it on the continuous-batching join path too, or extend() hits a
-    # singleton without the method. A warm singleton is one unpadded row.
-    to_batch = getattr(cache_obj, "to_batch", None)
-    if callable(to_batch):
-        return to_batch([0])
-    return cache_obj
+    def fallback(cache):
+        if isinstance(cache, _REGULAR_SINGLETON_CACHE_TYPES):
+            return cache.merge([cache])
+        if (
+            _TQ_SINGLETON_CACHE_TYPE is not None
+            and type(cache) is _TQ_SINGLETON_CACHE_TYPE
+        ):
+            return cache.merge([cache])
+        # ArraysCache and caches that are already batched keep their identity.
+        return cache
+
+    return convert_cache_layer(
+        cache_obj, CacheConversionContext.warm_singleton(), fallback
+    )
 
 
 def _extend_cache_layer(cache_a: Any, cache_b: Any) -> Any:
@@ -1593,7 +1571,6 @@ class SchedulingPolicy(Enum):
 
     FCFS = "fcfs"  # First-Come-First-Served
     PRIORITY = "priority"  # Priority-based
-
 
 
 def _expected_chunk_len(step_size: int, remaining: int, kv_total: int, boundary_enabled: bool, block_size: int) -> int:

@@ -35,6 +35,8 @@ import mlx.nn as nn
 import mlx_lm.utils as _utils
 from mlx.utils import tree_map
 
+from omlx.quantization_policy import native_ratio128_checkpoint_eligible
+
 logger = logging.getLogger(__name__)
 
 SAFETENSORS_DTYPE_FALLBACKS = {"F8_E8M0": "U8"}
@@ -43,32 +45,8 @@ _PATCHED = False
 
 
 def _native_ratio128_attention_enabled(config: dict[str, Any]) -> bool:
-    """Keep the native ratio-128 attention path off for sub-4-bit V4."""
-    if not str(config.get("model_type", "")).startswith("deepseek_v4"):
-        return True
-
-    quantizations = [config.get("quantization"), config.get("quantization_config")]
-    text_config = config.get("text_config")
-    if isinstance(text_config, dict):
-        quantizations.extend(
-            [text_config.get("quantization"), text_config.get("quantization_config")]
-        )
-
-    # Per-layer overrides can be nested below a four-bit default.
-    while quantizations:
-        quantization = quantizations.pop()
-        bits = quantization.get("bits") if isinstance(quantization, dict) else None
-        if (
-            isinstance(bits, (int, float))
-            and not isinstance(bits, bool)
-            and float(bits) < 4
-        ):
-            return False
-        if isinstance(quantization, dict):
-            quantizations.extend(quantization.values())
-        elif isinstance(quantization, list):
-            quantizations.extend(quantization)
-    return True
+    """Apply checkpoint eligibility before ModelArgs and kernel dispatch."""
+    return native_ratio128_checkpoint_eligible(config)
 
 
 def _load_safetensors(path: str) -> dict:

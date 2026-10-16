@@ -97,9 +97,22 @@ def test_extend_keeps_arrays_cache_in_place():
 def test_make_cache_finds_nested_model_owned_batch_conversion():
     gen = importlib.import_module("mlx_lm.generate")
 
+    class CustomBatchCache:
+        def __init__(self, left_padding):
+            self.left_padding = tuple(left_padding)
+
+        def extend(self, other):
+            pass
+
+        def filter(self, indices):
+            pass
+
+        def extract(self, index):
+            return self
+
     class CustomCache:
         def to_batch(self, left_padding):
-            return ("custom-batch", tuple(left_padding))
+            return CustomBatchCache(left_padding)
 
     class Model:
         layers = (object(),)
@@ -110,7 +123,8 @@ def test_make_cache_finds_nested_model_owned_batch_conversion():
     caches = gen._make_cache(Model(), [2, 0], None)
 
     nested = caches[0].caches[0].caches[0]
-    assert nested == ("custom-batch", (2, 0))
+    assert isinstance(nested, CustomBatchCache)
+    assert nested.left_padding == (2, 0)
 
 
 def test_prompt_batch_full_split_moves_cache_without_copy():
@@ -136,3 +150,32 @@ def test_prompt_batch_full_split_moves_cache_without_copy():
     assert moved.uids == [42]
     assert moved.prompt_cache[0] is arrays
     assert moved.prompt_cache[1] is kv
+
+
+def test_warm_qsa_join_filter_extract_preserves_index_keys_and_positions():
+    from omlx.patches import mlx_vlm_qwen4_exp_compat as compat
+
+    compat.apply_mlx_vlm_qwen4_exp_compat_patch()
+    language = importlib.import_module("mlx_vlm.models.qwen4_exp.language")
+    sources = []
+    for length, start in ((4, 10), (2, 30)):
+        source = language.QSAKVCache()
+        keys = mx.arange(length * 4, dtype=mx.float32).reshape(1, 1, length, 4)
+        source.update_and_fetch(keys, keys + 1)
+        source.update_indexer(
+            mx.arange(length * 8, dtype=mx.float32).reshape(1, length, 8),
+            mx.arange(start, start + length, dtype=mx.int32)[None],
+        )
+        sources.append(source)
+
+    gen = importlib.import_module("mlx_lm.generate")
+    joined = gen._extend_cache([sources[0]], [sources[1]])[0]
+    assert isinstance(joined, language.BatchQSAKVCache)
+    joined.filter(mx.array([1, 0]))
+    for row, source in enumerate(reversed(sources)):
+        extracted = joined.extract(row)
+        assert mx.array_equal(extracted.index_keys, source.index_keys).item()
+        assert mx.array_equal(
+            extracted.index_position_ids, source.index_position_ids
+        ).item()
+        assert extracted.offset == source.offset
